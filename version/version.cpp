@@ -1,15 +1,8 @@
-
-//
-// created by AheadLib
-// github:https://github.com/strivexjun/AheadLib-x86-x64
-//
-
 #include <windows.h>
 #include <Shlwapi.h>
 #include<vector>
 #include <time.h>
 #include <iostream>
-//#include "aobscan.h"
 using namespace std;
 
 #pragma comment( lib, "Shlwapi.lib")
@@ -384,10 +377,10 @@ DWORD WINAPI ThreadProc(LPVOID lpThreadParameter)
 	HANDLE hProcess;
 
 	//PVOID addr1 = reinterpret_cast<PVOID>(0x00401000);
-	BYTE data1[] = { 0x90,0x90,0x8B,0x90,0x20,0x0D };
+	BYTE data1[] = { 0xFF ,0x83 ,0xF8 ,0x04 ,0x74 ,0x09 ,0xC7 ,0x45 ,0xF8 ,0x01 };
 	TCHAR mcode[MAX_PATH];
 
-	std::vector <DWORD> vResultContainer = FindSigX32(GetCurrentProcessId(), "740E8B90200D", 0, 0x7fffffff);
+	std::vector <DWORD> vResultContainer = FindSigX32(GetCurrentProcessId(), "FF83F8047409C745F800", 0, 0x7fffffff);
 	
 	hProcess = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, GetCurrentProcessId());
 	if (hProcess)
@@ -398,11 +391,11 @@ DWORD WINAPI ThreadProc(LPVOID lpThreadParameter)
 			PVOID addr1 = reinterpret_cast<PVOID>(*it);
 			WriteProcessMemory(hProcess, addr1, data1, sizeof(data1), NULL);
 			wsprintf(mcode, TEXT("地址为:%x"), *it);
-			MessageBox(NULL, mcode, TEXT("AheadLib"), MB_ICONSTOP);
+			//MessageBox(NULL, mcode, TEXT("AheadLib"), MB_ICONINFORMATION);
 			nSize1++;
 		}
 		wsprintf(mcode, TEXT("数量为:%d"), nSize1);
-		MessageBox(NULL, mcode, TEXT("AheadLib"), MB_ICONSTOP);
+		//MessageBox(NULL, mcode, TEXT("AheadLib"), MB_ICONINFORMATION);
 		CloseHandle(hProcess);
 	}
 
@@ -418,7 +411,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, PVOID pvReserved)
 
 		if (Load() && Init())
 		{
-			TCHAR szAppName1[MAX_PATH] = TEXT("MathZjz.exe");//请修改宿主进程名
+			TCHAR szAppName1[MAX_PATH] = TEXT("ClassIn.exe");//请修改宿主进程名
 			TCHAR szCurName1[MAX_PATH];
 
 			GetModuleFileName(NULL, szCurName1, MAX_PATH);
@@ -428,6 +421,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, PVOID pvReserved)
 			if (StrCmpI(szCurName1, szAppName1) == 0)
 			{
 				//启动补丁线程或者其他操作
+				MessageBox(NULL, "已获取教师权限！", TEXT("xuqinyang"), MB_ICONINFORMATION);
 				HANDLE hThread = CreateThread(NULL, NULL, ThreadProc, NULL, NULL, NULL);
 				if (hThread)
 				{
