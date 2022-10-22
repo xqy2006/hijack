@@ -11,5 +11,4 @@ c:\users\26019\desktop\version\version.cpp(274): warning C4244: “参数”: �
           [
               _Ty=DWORD
           ]
-    正在创建库 C:\Users\26019\Desktop\version\Debug\version.lib 和对象 C:\Users\26019\Desktop\version\Debug\version.exp
   version.vcxproj -> C:\Users\26019\Desktop\version\Debug\version.dll

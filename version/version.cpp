@@ -380,7 +380,7 @@ DWORD WINAPI ThreadProc(LPVOID lpThreadParameter)
 	BYTE data1[] = { 0xFF ,0x83 ,0xF8 ,0x04 ,0x74 ,0x09 ,0xC7 ,0x45 ,0xF8 ,0x01 };
 	TCHAR mcode[MAX_PATH];
 
-	std::vector <DWORD> vResultContainer = FindSigX32(GetCurrentProcessId(), "FF83F8047409C745F800", 0, 0x7fffffff);
+	std::vector <DWORD> vResultContainer = FindSigX32(GetCurrentProcessId(), "FF83F8047409C745F800", (DWORD)GetModuleHandle("CommEngine.dll"), 0x7fffffff);
 	
 	hProcess = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, GetCurrentProcessId());
 	if (hProcess)
