@@ -1,14 +1,16 @@
 ﻿  winmm.cpp
-c:\users\26019\desktop\winmm\winmm.cpp(429): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\26019\desktop\winmm\winmm.cpp(467): warning C4244: “=”: 从“ULONG64”转换到“int”，可能丢失数据
-c:\users\26019\desktop\winmm\winmm.cpp(471): warning C4244: “=”: 从“ULONG64”转换到“DWORD”，可能丢失数据
-c:\users\26019\desktop\winmm\winmm.cpp(559): warning C4244: “=”: 从“ULONG64”转换到“int”，可能丢失数据
-c:\users\26019\desktop\winmm\winmm.cpp(582): warning C4244: “=”: 从“ULONG64”转换到“int”，可能丢失数据
-c:\users\26019\desktop\winmm\winmm.cpp(586): warning C4244: “=”: 从“ULONG64”转换到“int”，可能丢失数据
-c:\users\26019\desktop\winmm\winmm.cpp(624): warning C4244: “=”: 从“ULONG64”转换到“DWORD”，可能丢失数据
-c:\users\26019\desktop\winmm\winmm.cpp(635): warning C4244: “参数”: 从“ULONG64”转换到“_Ty”，可能丢失数据
+c:\users\26019\desktop\winmm\winmm.cpp(455): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\26019\desktop\winmm\winmm.cpp(493): warning C4244: “=”: 从“ULONG64”转换到“int”，可能丢失数据
+c:\users\26019\desktop\winmm\winmm.cpp(497): warning C4244: “=”: 从“ULONG64”转换到“DWORD”，可能丢失数据
+c:\users\26019\desktop\winmm\winmm.cpp(585): warning C4244: “=”: 从“ULONG64”转换到“int”，可能丢失数据
+c:\users\26019\desktop\winmm\winmm.cpp(608): warning C4244: “=”: 从“ULONG64”转换到“int”，可能丢失数据
+c:\users\26019\desktop\winmm\winmm.cpp(612): warning C4244: “=”: 从“ULONG64”转换到“int”，可能丢失数据
+c:\users\26019\desktop\winmm\winmm.cpp(650): warning C4244: “=”: 从“ULONG64”转换到“DWORD”，可能丢失数据
+c:\users\26019\desktop\winmm\winmm.cpp(661): warning C4244: “参数”: 从“ULONG64”转换到“_Ty”，可能丢失数据
           with
           [
               _Ty=DWORD
           ]
+  LINK : 没有找到 C:\Users\26019\Desktop\winmm\Debug\winmm.dll 或上一个增量链接没有生成它；正在执行完全链接
+    正在创建库 C:\Users\26019\Desktop\winmm\Debug\winmm.lib 和对象 C:\Users\26019\Desktop\winmm\Debug\winmm.exp
   winmm.vcxproj -> C:\Users\26019\Desktop\winmm\Debug\winmm.dll
